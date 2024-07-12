@@ -1,0 +1,32 @@
+header {
+    background-color: $secondary-bg;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 63px;
+    position: relative;
+
+
+    .logo {
+        font-family: $font-logo;
+        font-size: 30px;
+        font-weight: bold;
+        color: black;
+    }
+
+    i {
+        position: absolute;
+        left: 15px;
+        top: 22px;
+        font-size: 17px;
+        color: black;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+}

@@ -1,0 +1,44 @@
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 20px;
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+
+
+        .footer-logo {
+            font-family: $font-logo;
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin: 10px 0;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-family: $font-body;
+                    font-size: 16px;
+                    font-weight: 400;
+
+                    i {
+                        margin-right: 8px;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

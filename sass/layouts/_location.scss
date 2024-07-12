@@ -1,0 +1,20 @@
+main {
+
+    .location {
+        font-family: $font-body;
+        font-size: 16px;
+        background-color: #EAEAEA;
+        padding-top: 12px;
+        padding-bottom: 15px;
+        color: #353535;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        box-shadow: 0px 5px 4px 0px #00000026;
+
+        i {
+            padding-right: 20px;
+        }
+    }
+}
