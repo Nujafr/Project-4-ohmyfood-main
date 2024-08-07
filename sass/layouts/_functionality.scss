@@ -2,16 +2,15 @@ main {
     .functionality {
 
         background-color: $secondary-bg;
-        padding-top: $padding-section;
-        padding-bottom: $padding-section;
-        padding-left: $padding-section;
+        padding: $padding-section;
+
+
 
         .steps {
 
             display: flex;
             flex-direction: column;
             gap: 20px;
-            padding-right: $padding-section;
 
             @media (min-width: $breakpoint-desktop) {
                 display: flex;
