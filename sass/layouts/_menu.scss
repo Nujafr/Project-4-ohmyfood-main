@@ -12,12 +12,21 @@
     margin-top: -50px;
     z-index: 1;
 
+    @media (min-width: $breakpoint-desktop) {
+        width: 70%;
+        margin: -50px auto 0 auto;
+    }
+
 
     h2 {
         font-family: $font-logo;
         font-size: 28px;
         font-weight: 400;
-        
+
+        @media (max-width: 350px) {
+            font-size: 26px;
+        }
+
     }
 
     .menu-title {
@@ -26,17 +35,97 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        position: relative;
+
+        .menu-heart {
+            position: absolute;
+            right: 20px;
+            top: 30px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (min-width: $breakpoint-desktop) {
+                right: 0px;
+                top: 0px;
+            }
+    
+            &:hover .fa-heart-full {
+                opacity: 1;
+            }
+    
+            i {
+                font-size: 25px;
+            }
+    
+            .fa-heart-full {
+                position: absolute;
+                background: linear-gradient(to bottom, #9356DC, #FF79DA);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+            margin-top: 40px;
+            width: auto;
+
+            h2 {
+                margin-right: 20px;
+            }
+
+            i {
+                position: absolute;
+                right: -30px;
+                top: 8px;
+            }
+        }
     }
 
-    i {
-        padding-right: 15px;
-        font-size: 25px;
+    @keyframes fadeInFromLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 
     .menu-category {
 
         margin-bottom: 20px;
         width: 100%;
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: fadeInFromLeft 0.5s ease-out forwards;
+        animation-delay: 3s;
+
+        @media (min-width:$breakpoint-desktop) {
+            width: 634px;
+            margin: auto;
+        }
+
+        &:nth-of-type(2) {
+            animation-delay: 3s;
+        }
+
+        &:nth-of-type(3) {
+            animation-delay: 3.2s;
+        }
+
+        &:nth-of-type(4) {
+            animation-delay: 3.4s;
+        }
+
+        a {
+            text-decoration: none;
+        }
 
         h3 {
             font-family: $font-body;
@@ -50,7 +139,7 @@
             content: '';
             display: block;
             width: 40px;
-            height: 3px; 
+            height: 3px;
             background-color: #99E2D0;
             position: absolute;
             bottom: 10px;
@@ -67,14 +156,36 @@
             background-color: $secondary-bg;
             position: relative;
             box-shadow: 0px 4.01px 15.04px 0px #0000001A;
+            overflow: hidden;
+
+            &:hover,
+            &:active,
+            &:focus {
+                .greenbox {
+                    right: 0px;
+                }
+
+                .price {
+                    right: 75px;
+                }
+
+                .menu-txt {
+                    width: calc(100% - 40px - 60px);
+                }
+            }
         }
 
         .menu-txt {
             display: flex;
             flex-direction: column;
+            width: calc(100% - 40px);
+            transition: all 0.3s ease;
 
             p {
                 margin-bottom: 0px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .item-name {
@@ -91,8 +202,29 @@
             font-size: 15px;
             font-weight: 700;
             position: absolute;
-            top: 35px;
+            top: 40px;
             right: 15px;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .greenbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: -60px;
+            width: 60px;
+            height: 70px;
+            background-color: #99E2D0;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            color: white;
+            transition: right 0.3s ease;
+
+            i {
+                font-size: 20px;
+            }
         }
     }
 
@@ -106,6 +238,12 @@
         font-size: 16px;
         font-weight: 500;
         margin-bottom: 40px;
+        transition: filter 400ms, box-shadow 400ms;
+
+        &:hover {
+            filter: brightness(1.1);
+            box-shadow: 0px 8px 5px 0px #00000040;
+        }
     }
 }
 
@@ -117,6 +255,10 @@ main {
             height: 275px;
             width: 100%;
             object-fit: cover;
+
+            @media (min-width:$breakpoint-desktop) {
+                height: 383px;
+            }
         }
     }
 }
