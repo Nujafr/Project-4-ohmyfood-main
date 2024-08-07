@@ -3,9 +3,21 @@ footer {
     color: #fff;
     padding: 20px 20px;
 
+    @media (min-width: $breakpoint-desktop) {
+        padding: 0 20px;
+    }
+
     .footer-container {
         display: flex;
         flex-direction: column;
+
+        @media (min-width: $breakpoint-desktop) {
+            flex-direction: row-reverse;
+            justify-content: right;
+            gap: 50px;
+            padding: 20px 50px;
+            align-items: center;
+          }
 
 
         .footer-logo {
@@ -13,14 +25,28 @@ footer {
             font-size: 18px;
             margin-top: 10px;
             font-weight: 400;
+
+            @media (min-width: $breakpoint-desktop) {
+                
+            }
         }
 
         .footer-links {
             list-style: none;
             padding: 0;
 
+            @media (min-width: $breakpoint-desktop) {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+              }
+
             li {
                 margin: 10px 0;
+
+                @media (min-width: $breakpoint-desktop) {
+                    margin: 0 15px;
+                  }
 
                 a {
                     color: #fff;

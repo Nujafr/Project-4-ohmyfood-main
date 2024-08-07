@@ -32,7 +32,7 @@ body h2 {
 }
 @media (min-width: 1024px) {
   body h2 {
-    margin: auto;
+    margin: auto auto 20px auto;
     max-width: 1055px;
   }
 }
@@ -152,6 +152,7 @@ main .restaurants .resto-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 @media (min-width: 1024px) {
   main .restaurants .resto-container {
@@ -172,6 +173,19 @@ main .restaurants .resto-container a {
     width: calc(50% - 50px);
     margin-bottom: 40px;
   }
+}
+main .restaurants .resto-container span {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  height: 29px;
+  width: 80px;
+  top: 13px;
+  right: 20px;
+  color: #008766;
+  background: #99E2D0;
 }
 main .restaurants .resto-container .resto-card {
   display: flex;
@@ -203,26 +217,19 @@ main .restaurants .resto-container .resto-heart {
   justify-content: center;
   align-items: center;
 }
+main .restaurants .resto-container .resto-heart:hover .fa-heart-full {
+  opacity: 1;
+}
 main .restaurants .resto-container .resto-heart i {
   font-size: 20px;
 }
-main .restaurants .resto-container .resto-heart .heart-checkbox {
-  display: none;
-}
-main .restaurants .resto-container .resto-heart .heart-label {
-  cursor: pointer;
-}
 main .restaurants .resto-container .resto-heart .fa-heart-full {
-  display: none;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  position: absolute;
+  background: linear-gradient(to bottom, #9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-main .restaurants .resto-container .resto-heart .heart-checkbox:checked + .heart-label .fa-heart {
-  display: none;
-}
-main .restaurants .resto-container .resto-heart .heart-checkbox:checked + .heart-label .fa-heart-full {
-  display: inline;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 footer {
@@ -406,12 +413,47 @@ main .functionality .steps .step:nth-of-type(3) .icon {
   font-size: 28px;
   font-weight: 400;
 }
+@media (max-width: 350px) {
+  .menu h2 {
+    font-size: 26px;
+  }
+}
 .menu .menu-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
+}
+.menu .menu-title .menu-heart {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .menu .menu-title .menu-heart {
+    right: 0px;
+    top: 0px;
+  }
+}
+.menu .menu-title .menu-heart:hover .fa-heart-full {
+  opacity: 1;
+}
+.menu .menu-title .menu-heart i {
+  font-size: 25px;
+}
+.menu .menu-title .menu-heart .fa-heart-full {
+  position: absolute;
+  background: linear-gradient(to bottom, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 @media (min-width: 1024px) {
   .menu .menu-title {
@@ -421,27 +463,11 @@ main .functionality .steps .step:nth-of-type(3) .icon {
   .menu .menu-title h2 {
     margin-right: 20px;
   }
-}
-.menu i {
-  font-size: 25px;
-}
-.menu .heart-checkbox {
-  display: none;
-}
-.menu .heart-label {
-  cursor: pointer;
-}
-.menu .fa-heart-full {
-  display: none;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.menu .heart-checkbox:checked + .heart-label .fa-heart {
-  display: none;
-}
-.menu .heart-checkbox:checked + .heart-label .fa-heart-full {
-  display: inline;
+  .menu .menu-title i {
+    position: absolute;
+    right: -30px;
+    top: 8px;
+  }
 }
 @keyframes fadeInFromLeft {
   0% {

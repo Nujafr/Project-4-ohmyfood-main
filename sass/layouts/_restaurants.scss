@@ -33,6 +33,7 @@ main {
                 position: absolute;
                 justify-content: center;
                 align-items: center;
+                font-weight: 500;
                 height: 29px;
                 width: 80px;
                 top: 13px;
@@ -88,7 +89,6 @@ main {
                     -webkit-text-fill-color: transparent;
                     opacity: 0;
                     transition: opacity 0.3s ease-in-out;
-
                 }
             }
         }
